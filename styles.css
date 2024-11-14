@@ -35,52 +35,6 @@ p {
   margin: 10px 0;
 }
 
-/* Section Styling */
-section {
-  background-color: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Link Styling */
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Terms and Definitions */
-#terms-definitions {
-  border-left: 4px solid #0056b3;
-  padding-left: 10px;
-}
-
-/* Argument Section Styling */
-.arguments, .counterarguments, .rebuttals {
-  margin-top: 15px;
-}
-
-.arguments h3, .counterarguments h3, .rebuttals h3 {
-  color: #333;
-}
-
-/* Footer and Back Link */
-footer {
-  text-align: center;
-  margin-top: 20px;
-}
-
-footer a {
-  color: #007bff;
-  font-weight: bold;
-}
-
-
 #search-bar {
   padding: 15px;
   font-size: 1em;
