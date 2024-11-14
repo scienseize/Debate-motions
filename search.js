@@ -9,7 +9,7 @@ function searchMotions() {
   const results = motions.filter(motion => motion.keyword.includes(query));
 
   // Limit to 4 results only
-  const limitedResults = results.slice(0, 1);
+  const limitedResults = results.slice(0, 3);
 
   // Display limited results with "Government" and "Opposition" buttons
   limitedResults.forEach((motion, index) => {
