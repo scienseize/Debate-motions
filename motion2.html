@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion 1: Social Media Regulation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Motion 1: Social Media Regulation</h1>
+
+  <!-- Government Side -->
+  <section id="government-side">
+    <h2>Government Side</h2>
+    <h3>Terms and Definitions</h3>
+    <p>Define terms like "social media," "regulation," etc.</p>
+    <h3>Arguments</h3>
+    <p>Arguments in favor of regulation.</p>
+    <h3>Counterarguments</h3>
+    <p>Anticipate and counter opposition arguments.</p>
+    <h3>Rebuttals</h3>
+    <p>Rebuttal points against opposition counterarguments.</p>
+  </section>
+
+  <!-- Opposition Side -->
+  <section id="opposition-side">
+    <h2>Opposition Side</h2>
+    <h3>Terms and Definitions</h3>
+    <p>Define terms from the opposition perspective.</p>
+    <h3>Arguments</h3>
+    <p>Arguments against regulation.</p>
+    <h3>Counterarguments</h3>
+    <p>Address government side arguments.</p>
+    <h3>Rebuttals</h3>
+    <p>Rebuttal points against government counterarguments.</p>
+  </section>
+
+  <a href="index.html">Back to Search</a>
+
+  <script>
+    // Function to display only the selected side
+    function displaySelectedSide() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const side = urlParams.get('side');
+      
+      const governmentSection = document.getElementById("government-side");
+      const oppositionSection = document.getElementById("opposition-side");
+
+      if (side === "government") {
+        oppositionSection.style.display = "none";
+      } else if (side === "opposition") {
+        governmentSection.style.display = "none";
+      }
+    }
+
+    // Call the function on page load
+    displaySelectedSide();
+  </script>
+</body>
+</html>
