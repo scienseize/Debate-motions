@@ -1,38 +1,67 @@
-/* General Styling */
+/* Body Styling with Catppuccin Mocha Theme and Blur */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  color: #333;
-  line-height: 1.6;
-  margin: 20px;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: #cdd6f4; /* Light text color */
+  overflow: hidden;
+  position: relative;
+  margin: 0;
 }
 
-h1, h2 {
-  color: #0056b3;
+/* Background gradient inspired by Catppuccin Mocha colors */
+body::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(135deg, #1e1e2e, #302d41, #45475a, #585b70, #b4befe, #f5e0dc);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main content container */
+.container {
   text-align: center;
+  max-width: 600px;
+  padding: 30px;
+  background: rgba(30, 30, 46, 0.85); /* Dark overlay with slight transparency */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+
+/* Heading and Subtitle */
 h1 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #f5e0dc; /* Light pinkish white */
+  margin-bottom: 10px;
 }
 
-h2 {
-  font-size: 1.4em;
-  margin-top: 30px;
-}
-
-h3 {
-  color: #444;
+.subtitle {
   font-size: 1.2em;
-  margin-top: 20px;
+  color: #b4befe; /* Soft blue */
+  margin-bottom: 30px;
 }
 
-p {
-  margin: 10px 0;
+/* Search Bar */
+.search-container {
+  display: flex;
+  justify-content: center;
 }
 
 #search-bar {
@@ -40,33 +69,41 @@ p {
   font-size: 1em;
   width: 80%;
   max-width: 400px;
-  border: 2px solid #d1d5db;
-  border-radius: 50px; /* Increased border-radius for a more rounded look */
+  border: 2px solid #45475a;
+  border-radius: 30px; /* Rounder, pill shape */
   outline: none;
   transition: all 0.3s ease;
 }
 
 #search-bar:focus {
-  border-color: #2563eb;
-  box-shadow: 0px 0px 10px rgba(37, 99, 235, 0.2);
+  border-color: #b4befe;
+  box-shadow: 0px 0px 10px rgba(180, 190, 254, 0.4);
 }
 
+/* Results Styling */
 #results {
   list-style-type: none;
-  padding: 0;
-  width: 300px;
+  margin-top: 20px;
 }
 
 #results li {
-  background: #f0f0f0;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
+  background-color: #302d41;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #f5e0dc;
+  cursor: pointer;
 }
 
-#results button {
-  margin-left: 5px;
-  padding: 5px 10px;
+#results li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#results a {
+  color: #f5e0dc;
+  text-decoration: none;
+  font-weight: bold;
 }

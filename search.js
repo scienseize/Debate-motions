@@ -8,17 +8,24 @@ function searchMotions() {
   // Filter motions based on the search query
   const results = motions.filter(motion => motion.keyword.includes(query));
 
-  // Display results
-  results.forEach(motion => {
+  // Limit to 4 results only
+  const limitedResults = results.slice(0, 1);
+
+  // Display limited results with "Government" and "Opposition" buttons
+  limitedResults.forEach((motion, index) => {
     const listItem = document.createElement("li");
+    listItem.style.animation = `fadeIn 0.5s ease ${index * 0.1}s both`;
+    
+    // Title of the motion
     const title = document.createElement("span");
     title.textContent = motion.title;
-    
-    // Create buttons for Government and Opposition
+
+    // Government button
     const govButton = document.createElement("button");
     govButton.textContent = "Government";
     govButton.onclick = () => window.location.href = `${motion.link}?side=government`;
 
+    // Opposition button
     const oppButton = document.createElement("button");
     oppButton.textContent = "Opposition";
     oppButton.onclick = () => window.location.href = `${motion.link}?side=opposition`;
@@ -30,3 +37,4 @@ function searchMotions() {
     resultsContainer.appendChild(listItem);
   });
 }
+

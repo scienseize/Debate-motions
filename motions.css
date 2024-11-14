@@ -1,3 +1,17 @@
+:root{
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -7,16 +21,32 @@ body {
     color: #333;
     line-height: 1.6;
     margin: 20px;
+    background: linear-gradient(135deg, #1e1e2e, #302d41, #45475a, #585b70, #b4befe, #f5e0dc);
+    background-size: 200% 200%;
   }
   
-  h1, h2 {
+  h2 {
     color: #0056b3;
-    text-align: center;
+    text-align: left;
   }
   
   h1 {
     font-size: 1.8em;
     margin-bottom: 20px;
+    font-family: "Rubik", sans-serif;
+    color: white;
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--purple),
+        var(--violet),
+        var(--pink),
+        var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
   }
   
   h2 {
