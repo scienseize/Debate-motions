@@ -1,17 +1,16 @@
-/* Body Styling with Catppuccin Mocha Theme and Blur */
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   font-family: 'Arial', sans-serif;
-  color: #cdd6f4; /* Light text color */
+  color: #cdd6f4; 
   overflow: hidden;
   position: relative;
   margin: 0;
 }
 
-/* Background gradient inspired by Catppuccin Mocha colors */
+
 body::before {
   content: "";
   position: absolute;
@@ -26,39 +25,41 @@ body::before {
   z-index: -1;
 }
 
-/* Gradient Animation */
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Main content container */
+
 .container {
   text-align: center;
-  max-width: 600px;
+  width: 600px;
+  max-height: 400px;
   padding: 30px;
-  background: rgba(30, 30, 46, 0.85); /* Dark overlay with slight transparency */
+  background: rgba(30, 30, 46, 0.85); 
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
 }
 
 
-/* Heading and Subtitle */
+
 h1 {
   font-size: 2.5em;
   font-weight: bold;
-  color: #f5e0dc; /* Light pinkish white */
+  color: #f5e0dc; 
   margin-bottom: 10px;
 }
 
 .subtitle {
   font-size: 1.2em;
-  color: #b4befe; /* Soft blue */
+  color: #b4befe; 
   margin-bottom: 30px;
 }
 
-/* Search Bar */
+
 .search-container {
   display: flex;
   justify-content: center;
@@ -70,7 +71,7 @@ h1 {
   width: 80%;
   max-width: 400px;
   border: 2px solid #45475a;
-  border-radius: 30px; /* Rounder, pill shape */
+  border-radius: 30px; 
   outline: none;
   transition: all 0.3s ease;
 }
@@ -80,10 +81,13 @@ h1 {
   box-shadow: 0px 0px 10px rgba(180, 190, 254, 0.4);
 }
 
-/* Results Styling */
+
 #results {
   list-style-type: none;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #results li {
@@ -95,6 +99,11 @@ h1 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: #f5e0dc;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 500px;
 }
 
 #results li:hover {
